@@ -1,0 +1,8 @@
+[Default Applications]
+inode/directory=thunar.desktop
+application/x-wayland-gnome-saved-search=thunar.desktop
+
+[Added Associations]
+image/jpeg=org.gnome.Loupe.desktop;
+image/webp=org.gnome.Loupe.desktop;
+image/png=org.gnome.Loupe.desktop;

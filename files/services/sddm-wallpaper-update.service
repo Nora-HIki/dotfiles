@@ -1,0 +1,13 @@
+[Unit]
+Description=Update SDDM background with a random video first frame
+Before=sddm.service
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/share/sddm/scripts/wallpaper_update.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+

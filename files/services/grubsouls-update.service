@@ -1,0 +1,13 @@
+[Unit]
+Description=Grubsouls theme update service
+# Run after filesystems are ready and after waking up
+After=local-fs.target hibernate.target suspend.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /boot/grub/themes/grubsouls/update_theme.py
+# Ensures it doesn't try to restart if it finishes successfully
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target hibernate.target suspend.target

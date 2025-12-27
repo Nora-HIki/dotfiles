@@ -1,0 +1,13 @@
+# Dotter
+.dotter/local.toml
+.dotter/cache.toml
+.dotter/cache/
+
+#todo
+todo
+
+# OS/Editor junk
+.DS_Store
+*.swp
+*.swo
+.vscode/

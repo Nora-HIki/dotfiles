@@ -1,0 +1,593 @@
+@define-color STRAWBERRY_100 #ff8c82;
+@define-color STRAWBERRY_300 #ed5353;
+@define-color STRAWBERRY_500 #c6262e;
+@define-color STRAWBERRY_700 #a10705;
+@define-color STRAWBERRY_900 #7a0000;
+@define-color ORANGE_100 #ffc27d;
+@define-color ORANGE_300 #ffa154;
+@define-color ORANGE_500 #f37329;
+@define-color ORANGE_700 #cc3b02;
+@define-color ORANGE_900 #a62100;
+@define-color BANANA_100 #fff394;
+@define-color BANANA_300 #ffe16b;
+@define-color BANANA_500 #f9c440;
+@define-color BANANA_700 #d48e15;
+@define-color BANANA_900 #ad5f00;
+@define-color LIME_100 #d1ff82;
+@define-color LIME_300 #9bdb4d;
+@define-color LIME_500 #68b723;
+@define-color LIME_700 #3a9104;
+@define-color LIME_900 #206b00;
+@define-color MINT_100 #89ffdd;
+@define-color MINT_300 #43d6b5;
+@define-color MINT_500 #28bca3;
+@define-color MINT_700 #0e9a83;
+@define-color MINT_900 #007367;
+@define-color BLUEBERRY_100 #8cd5ff;
+@define-color BLUEBERRY_300 #64baff;
+@define-color BLUEBERRY_500 #3689e6;
+@define-color BLUEBERRY_700 #0d52bf;
+@define-color BLUEBERRY_900 #002e99;
+@define-color GRAPE_100 #e4c6fa;
+@define-color GRAPE_300 #cd9ef7;
+@define-color GRAPE_500 #a56de2;
+@define-color GRAPE_700 #7239b3;
+@define-color GRAPE_900 #452981;
+@define-color BUBBLEGUM_100 #fe9ab8;
+@define-color BUBBLEGUM_300 #f4679d;
+@define-color BUBBLEGUM_500 #de3e80;
+@define-color BUBBLEGUM_700 #bc245d;
+@define-color BUBBLEGUM_900 #910e38;
+@define-color LATTE_100 #efdfc4;
+@define-color LATTE_300 #e7c591;
+@define-color LATTE_500 #cfa25e;
+@define-color LATTE_700 #b6802e;
+@define-color LATTE_900 #804b00;
+@define-color COCOA_100 #a3907c;
+@define-color COCOA_300 #8a715e;
+@define-color COCOA_500 #715344;
+@define-color COCOA_700 #57392d;
+@define-color COCOA_900 #3d211b;
+@define-color SILVER_100 #fafafa;
+@define-color SILVER_300 #d4d4d4;
+@define-color SILVER_500 #abacae;
+@define-color SILVER_700 #7e8087;
+@define-color SILVER_900 #555761;
+@define-color SLATE_100 #95a3ab;
+@define-color SLATE_300 #667885;
+@define-color SLATE_500 #485a6c;
+@define-color SLATE_700 #273445;
+@define-color SLATE_900 #0e141f;
+@define-color BLACK_100 #666;
+@define-color BLACK_300 #4d4d4d;
+@define-color BLACK_500 #333;
+@define-color BLACK_700 #1a1a1a;
+@define-color BLACK_900 #000;
+@keyframes spin { to { -gtk-icon-transform: rotate(1turn); } }
+
+button.text-button, .linked button, .linked button.image-button, .linked windowcontrols button, windowcontrols .linked button, .linked button.image-button.toggle, .linked windowcontrols button.toggle, windowcontrols .linked button.toggle { box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 1px 1px rgba(0, 0, 0, 0.05); border-style: solid; border-color: rgba(0, 0, 0, 0.2); border-width: 1px; background-clip: border-box; background-color: #fafafa; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1); border-radius: 0.250000001rem; }
+
+button.text-button:backdrop, .linked button:backdrop { background-image: none; }
+
+button.text-button:disabled, .linked button:disabled { background-color: #f1f1f1; background-image: none; }
+
+button.text-button:active, .linked button:active, button.text-button:checked, .linked button:checked { background: #f1f1f1; box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 0 1px 1px rgba(0, 0, 0, 0.05), inset 0 0 1px 1px rgba(0, 0, 0, 0.05); filter: brightness(95%); transform: none; }
+
+button.text-button:active:disabled, .linked button:active:disabled, button.text-button:checked:disabled, .linked button:checked:disabled { box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 0 1px 1px rgba(0, 0, 0, 0.05); }
+
+button.text-button:disabled, .linked button:disabled { opacity: 0.5; }
+
+@define-color fg_color #333;
+@define-color bg_color #fafafa;
+@define-color base_color white;
+@define-color highlight_color white;
+@define-color borders rgba(0, 0, 0, 0.2);
+@define-color selected_bg_color alpha(@accent_color, 0.25);
+@define-color selected_fg_color shade(@accent_color, 0.5);
+.accent { color: mix(@accent_color, @fg_color, 0.27); }
+
+.accent:backdrop { color: inherit; }
+
+.title-1 { font-size: 24pt; font-weight: 700; letter-spacing: -0.04em; }
+
+.title-2 { font-weight: 300; font-size: 18pt; letter-spacing: -0.05em; }
+
+.title-3 { font-size: 11pt; }
+
+.title-4, .menu .title, popover.emoji-picker scrolledwindow.view box.vertical > label { font-weight: 700; opacity: 0.8; padding-bottom: 0.5em; padding-top: 0.5em; }
+
+.dim-label, entry placeholder, placeholder box button label:not(.title-3), placeholder .title-2 { opacity: 0.75; }
+
+.numeric, video controls.osd > box box.horizontal > label, scale value { font-feature-settings: "tnum"; }
+
+.small-label, scale value { font-size: 0.85rem; }
+
+.error { color: #c6262e; }
+
+.success { color: #3a9104; }
+
+.warning { color: #ad5f00; }
+
+.accent:backdrop, .error:backdrop, .success:backdrop, .warning:backdrop { color: inherit; }
+
+.osd, video controls.osd > box > button.flat.image-button, video windowcontrols controls.osd > box > button.flat, windowcontrols video controls.osd > box > button.flat, tooltip, scale.horizontal value.bottom, scale.horizontal value.top { background-color: rgba(51, 51, 51, 0.95); border-radius: 0.375000001rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); color: white; margin: 0.500000001rem; padding: 0.500000001rem; }
+
+.card, list.boxed-list, paper { background-color: white; border-radius: 0.375000001rem; box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.128), 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+paper { border-radius: 0; }
+
+.checkerboard { background-color: #f1f1f1; background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.05) 0.750000001rem, transparent 0.750000001rem, transparent 2.1666666677rem, rgba(0, 0, 0, 0.05) 2.1666666677rem, rgba(0, 0, 0, 0.05)), linear-gradient(45deg, rgba(0, 0, 0, 0.05) 0.750000001rem, transparent 0.750000001rem, transparent 2.1666666677rem, rgba(0, 0, 0, 0.05) 2.1666666677rem, rgba(0, 0, 0, 0.05)); background-size: 2.000000001rem 2.000000001rem; background-position: 0 0, 1.000000001rem 1.000000001rem; }
+
+.circular, button.image-button, windowcontrols button { border-radius: 9999px; }
+
+.monospace { font-family: monospace; }
+
+.border-spacing-half { border-spacing: 0.5rem; }
+
+.border-spacing-single { border-spacing: 1rem; }
+
+.border-spacing-double { border-spacing: 2rem; }
+
+.linked:not(.vertical) > combobox:dir(ltr):not(:first-child) > box > button.combo, .linked:not(.vertical) > combobox:dir(rtl):not(:last-child) > box > button.combo, combobox.linked button:nth-child(2), viewswitcher > box > button.horizontal.radio:dir(ltr):not(:first-child), viewswitcher > box > button.horizontal.radio:dir(rtl):not(:last-child), .linked:not(.vertical) > button:dir(ltr):not(:first-child), .linked:not(.vertical) > button:dir(rtl):not(:last-child), .linked:not(.vertical) > button.image-button:dir(ltr):not(:first-child), windowcontrols .linked:not(.vertical) > button:dir(ltr):not(:first-child), .linked:not(.vertical) > button.image-button:dir(rtl):not(:last-child), windowcontrols .linked:not(.vertical) > button:dir(rtl):not(:last-child), .linked:not(.vertical) > entry:dir(ltr):not(:first-child), .linked:not(.vertical) > entry:dir(rtl):not(:last-child), .linked:not(.vertical) > spinbutton:dir(ltr):not(:first-child), .linked:not(.vertical) > spinbutton:dir(rtl):not(:last-child) { border-top-left-radius: 0; border-bottom-left-radius: 0; margin-left: 0; }
+
+.linked:not(.vertical) > combobox:dir(ltr):not(:last-child) > box > button.combo, .linked:not(.vertical) > combobox:dir(rtl):not(:first-child) > box > button.combo, viewswitcher > box > button.horizontal.radio:dir(ltr):not(:last-child), viewswitcher > box > button.horizontal.radio:dir(rtl):not(:first-child), .linked:not(.vertical) > button:dir(ltr):not(:last-child), .linked:not(.vertical) > button:dir(rtl):not(:first-child), .linked:not(.vertical) > button.image-button:dir(ltr):not(:last-child), windowcontrols .linked:not(.vertical) > button:dir(ltr):not(:last-child), .linked:not(.vertical) > button.image-button:dir(rtl):not(:first-child), windowcontrols .linked:not(.vertical) > button:dir(rtl):not(:first-child), .linked:not(.vertical) > entry:dir(ltr):not(:last-child), .linked:not(.vertical) > entry:dir(rtl):not(:first-child), .linked:not(.vertical) > spinbutton:dir(ltr):not(:last-child), .linked:not(.vertical) > spinbutton:dir(rtl):not(:first-child) { border-right-style: none; border-top-right-radius: 0; border-bottom-right-radius: 0; margin-right: 0; }
+
+.linked.vertical > combobox:dir(ltr):not(:first-child) > box > button.combo, .linked.vertical > combobox:dir(rtl):not(:last-child) > box > button.combo, .linked.vertical > button:dir(ltr):not(:first-child), .linked.vertical > button:dir(rtl):not(:last-child), .linked.vertical > button.image-button:dir(ltr):not(:first-child), windowcontrols .linked.vertical > button:dir(ltr):not(:first-child), .linked.vertical > button.image-button:dir(rtl):not(:last-child), windowcontrols .linked.vertical > button:dir(rtl):not(:last-child), .linked.vertical > entry:dir(ltr):not(:first-child), .linked.vertical > entry:dir(rtl):not(:last-child), .linked.vertical > spinbutton:dir(ltr):not(:first-child), .linked.vertical > spinbutton:dir(rtl):not(:last-child) { border-top-left-radius: 0; border-top-right-radius: 0; }
+
+.linked.vertical > combobox:dir(ltr):not(:last-child) > box > button.combo, .linked.vertical > combobox:dir(rtl):not(:first-child) > box > button.combo, .linked.vertical > button:dir(ltr):not(:last-child), .linked.vertical > button:dir(rtl):not(:first-child), .linked.vertical > button.image-button:dir(ltr):not(:last-child), windowcontrols .linked.vertical > button:dir(ltr):not(:last-child), .linked.vertical > button.image-button:dir(rtl):not(:first-child), windowcontrols .linked.vertical > button:dir(rtl):not(:first-child), .linked.vertical > entry:dir(ltr):not(:last-child), .linked.vertical > entry:dir(rtl):not(:first-child), .linked.vertical > spinbutton:dir(ltr):not(:last-child), .linked.vertical > spinbutton:dir(rtl):not(:first-child) { border-bottom-style: none; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+
+.linked button:active, .linked button:checked, .linked button.image-button:active, .linked button.image-button:checked, .linked button.image-button.toggle:active, .linked windowcontrols button.toggle:active, windowcontrols .linked button.toggle:active, .linked button.image-button.toggle:checked, .linked windowcontrols button.toggle:checked, windowcontrols .linked button.toggle:checked { background: #f1f1f1; box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 0 1px 1px rgba(0, 0, 0, 0.05), inset 0 0 1px 1px rgba(0, 0, 0, 0.05); color: #333; transform: none; }
+
+.linked button:active:disabled, .linked button:checked:disabled, .linked button.image-button:active:disabled, .linked button.image-button:checked:disabled, .linked button.image-button.toggle:active:disabled, .linked button.image-button.toggle:checked:disabled { box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 0 1px 1px rgba(0, 0, 0, 0.05); }
+
+button.osd, video controls.osd > box > button.flat.image-button, video windowcontrols controls.osd > box > button.flat, windowcontrols video controls.osd > box > button.flat { box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 1px 1px rgba(0, 0, 0, 0.05); border-style: solid; border-color: rgba(0, 0, 0, 0.2); border-width: 1px; background-clip: border-box; background-color: #fafafa; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1); border-radius: 0.250000001rem; background-image: none; border: none; box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.1), 0 3px 4px rgba(0, 0, 0, 0.15), 0 3px 3px -3px rgba(0, 0, 0, 0.35); color: #333; margin: 0; padding: 0.5rem; transition: background 300ms cubic-bezier(0.4, 0, 0.2, 1), transform 300ms cubic-bezier(0.66, 3, 0.64, 1); }
+
+button.osd:backdrop, video controls.osd > box > button.flat.image-button:backdrop, video windowcontrols controls.osd > box > button.flat:backdrop, windowcontrols video controls.osd > box > button.flat:backdrop { background-image: none; }
+
+button.osd:disabled, video controls.osd > box > button.flat.image-button:disabled, video windowcontrols controls.osd > box > button.flat:disabled, windowcontrols video controls.osd > box > button.flat:disabled { background-color: #f1f1f1; background-image: none; }
+
+button.osd:active, video controls.osd > box > button.flat.image-button:active, video windowcontrols controls.osd > box > button.flat:active, windowcontrols video controls.osd > box > button.flat:active { transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+button.osd:disabled, video controls.osd > box > button.flat.image-button:disabled, video windowcontrols controls.osd > box > button.flat:disabled, windowcontrols video controls.osd > box > button.flat:disabled { opacity: 0.5; box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+.linked button.osd, .linked video controls.osd > box > button.flat.image-button, .linked video windowcontrols controls.osd > box > button.flat, windowcontrols .linked video controls.osd > box > button.flat, video .linked controls.osd > box > button.flat.image-button, video .linked windowcontrols controls.osd > box > button.flat, windowcontrols video .linked controls.osd > box > button.flat { transition: none; transform: none; }
+
+.linked button.osd.vertical button.osd:first-child, .linked video controls.osd > box > button.vertical.flat.image-button button.osd:first-child, .linked video windowcontrols controls.osd > box > button.flat button.osd:first-child, windowcontrols .linked video controls.osd > box > button.flat button.osd:first-child, video .linked controls.osd > box > button.vertical.flat.image-button button.osd:first-child, video .linked windowcontrols controls.osd > box > button.flat button.osd:first-child, windowcontrols video .linked controls.osd > box > button.flat button.osd:first-child, .linked button.osd.vertical video controls.osd > box > button.flat.image-button:first-child, .linked button.osd.vertical video windowcontrols controls.osd > box > button.flat:first-child, windowcontrols .linked button.osd.vertical video controls.osd > box > button.flat:first-child, video .linked button.osd.vertical controls.osd > box > button.flat.image-button:first-child, video .linked button.osd.vertical windowcontrols controls.osd > box > button.flat:first-child, windowcontrols video .linked button.osd.vertical controls.osd > box > button.flat:first-child, .linked video controls.osd > box > button.vertical.flat.image-button controls.osd > box > button.flat.image-button:first-child, .linked video controls.osd > box > button.vertical.flat.image-button windowcontrols controls.osd > box > button.flat:first-child, .linked video windowcontrols controls.osd > box > button.flat controls.osd > box > button.flat:first-child, windowcontrols .linked video controls.osd > box > button.flat controls.osd > box > button.flat:first-child, video .linked controls.osd > box > button.vertical.flat.image-button controls.osd > box > button.flat.image-button:first-child, video .linked controls.osd > box > button.vertical.flat.image-button windowcontrols controls.osd > box > button.flat:first-child, video .linked windowcontrols controls.osd > box > button.flat controls.osd > box > button.flat:first-child, windowcontrols video .linked controls.osd > box > button.flat controls.osd > box > button.flat:first-child { box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.1), 0 3px 4px rgba(0, 0, 0, 0.15), 0 3px 3px -3px rgba(0, 0, 0, 0.35); }
+
+window.csd.dialog { box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.2), 0 3px 8px 2px rgba(0, 0, 0, 0.1), 0 5px 5px -3px rgba(0, 0, 0, 0.4), 0 8px 5px 1px rgba(0, 0, 0, 0.1); }
+
+window.csd.dialog:backdrop { box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15), 0 3px 3px -3px rgba(0, 0, 0, 0.35); }
+
+window.csd.dialog .dialog-content-area { margin: 1.000000001rem; margin-top: 1.500000001rem; }
+
+window.csd.dialog .dialog-action-area { margin: 1.000000001rem; margin-top: 1.3333333343rem; }
+
+window.csd.dialog .dialog-action-area button.text-button { min-width: 5.000000001rem; }
+
+window.csd.dialog .dialog-action-area button:dir(ltr) + button { margin-left: 0.500000001rem; }
+
+window.csd.dialog .dialog-action-area button:dir(rtl) + button { margin-right: 0.500000001rem; }
+
+header:not(:first-child) { margin-top: 1rem; }
+
+header .heading { opacity: 0.9; padding: 0; }
+
+header .subtitle { font-weight: 300; opacity: 0.8; }
+
+header.title-1 { letter-spacing: -0.04rem; }
+
+header.title-1 .heading { font-size: 24pt; font-weight: 700; }
+
+header.title-1 .subtitle { font-size: 1.3rem; font-weight: 400; margin-top: -0.25em; }
+
+header.title-2 .heading { font-weight: 600; font-size: 18pt; letter-spacing: -0.05rem; }
+
+header.title-2 .subtitle { font-size: initial; font-weight: 400; letter-spacing: initial; margin-top: -0.1em; }
+
+header.title-3 .heading { font-size: 11pt; }
+
+header.title-3 .subtitle { font-size: 0.95rem; font-weight: 400; margin-top: 0.1em; }
+
+header.title-4, .menu header.title { opacity: 1; }
+
+header.title-4 .heading, .menu header.title .heading { font-weight: 700; }
+
+header.title-4 .subtitle, .menu header.title .subtitle { font-size: 0.9em; font-weight: 400; margin-top: 0.1em; }
+
+granite-listitem { padding: 0.5rem; min-height: 2.6666666677rem; }
+
+granite-listitem .text-box { padding: 0.5rem; }
+
+window.csd.dialog.message .dialog-vbox .title { font-weight: 500; font-size: 1.22em; }
+
+window.csd.dialog.message .dialog-content-area box + expander-widget { margin-bottom: 0.500000001rem; }
+
+overlaybar .osd, overlaybar video controls.osd > box > button.flat.image-button, overlaybar video windowcontrols controls.osd > box > button.flat, windowcontrols overlaybar video controls.osd > box > button.flat, video overlaybar controls.osd > box > button.flat.image-button, video overlaybar windowcontrols controls.osd > box > button.flat, windowcontrols video overlaybar controls.osd > box > button.flat, overlaybar tooltip, overlaybar scale.horizontal value.bottom, scale.horizontal overlaybar value.bottom, overlaybar scale.horizontal value.top, scale.horizontal overlaybar value.top { padding: 0.500000001rem 1.000000001rem; text-shadow: 0 0.0833333343rem 0.1666666677rem rgba(51, 51, 51, 0.6); }
+
+overlaybar .osd spinner, overlaybar video controls.osd > box > button.flat.image-button spinner, overlaybar video windowcontrols controls.osd > box > button.flat spinner, windowcontrols overlaybar video controls.osd > box > button.flat spinner, video overlaybar controls.osd > box > button.flat.image-button spinner, video overlaybar windowcontrols controls.osd > box > button.flat spinner, windowcontrols video overlaybar controls.osd > box > button.flat spinner, overlaybar tooltip spinner, overlaybar scale.horizontal value.bottom spinner, scale.horizontal overlaybar value.bottom spinner, overlaybar scale.horizontal value.top spinner, scale.horizontal overlaybar value.top spinner { -gtk-icon-shadow: 0 0.0833333343rem 0.1666666677rem rgba(51, 51, 51, 0.6); }
+
+overlaybar .osd revealer:dir(ltr) > spinner, overlaybar video controls.osd > box > button.flat.image-button revealer:dir(ltr) > spinner, overlaybar video windowcontrols controls.osd > box > button.flat revealer:dir(ltr) > spinner, windowcontrols overlaybar video controls.osd > box > button.flat revealer:dir(ltr) > spinner, video overlaybar controls.osd > box > button.flat.image-button revealer:dir(ltr) > spinner, video overlaybar windowcontrols controls.osd > box > button.flat revealer:dir(ltr) > spinner, windowcontrols video overlaybar controls.osd > box > button.flat revealer:dir(ltr) > spinner, overlaybar tooltip revealer:dir(ltr) > spinner, overlaybar scale.horizontal value.bottom revealer:dir(ltr) > spinner, scale.horizontal overlaybar value.bottom revealer:dir(ltr) > spinner, overlaybar scale.horizontal value.top revealer:dir(ltr) > spinner, scale.horizontal overlaybar value.top revealer:dir(ltr) > spinner { margin-left: 0.5rem; }
+
+overlaybar .osd revealer:dir(rtl) > spinner, overlaybar video controls.osd > box > button.flat.image-button revealer:dir(rtl) > spinner, overlaybar video windowcontrols controls.osd > box > button.flat revealer:dir(rtl) > spinner, windowcontrols overlaybar video controls.osd > box > button.flat revealer:dir(rtl) > spinner, video overlaybar controls.osd > box > button.flat.image-button revealer:dir(rtl) > spinner, video overlaybar windowcontrols controls.osd > box > button.flat revealer:dir(rtl) > spinner, windowcontrols video overlaybar controls.osd > box > button.flat revealer:dir(rtl) > spinner, overlaybar tooltip revealer:dir(rtl) > spinner, overlaybar scale.horizontal value.bottom revealer:dir(rtl) > spinner, scale.horizontal overlaybar value.bottom revealer:dir(rtl) > spinner, overlaybar scale.horizontal value.top revealer:dir(rtl) > spinner, scale.horizontal overlaybar value.top revealer:dir(rtl) > spinner { margin-right: 0.5rem; }
+
+placeholder > grid { margin: 1.000000001rem; }
+
+placeholder > grid > .large-icons { -gtk-icon-size: 48px; }
+
+placeholder > grid > .large-icons:dir(ltr) { margin-right: 0.250000001rem; }
+
+placeholder > grid > .large-icons:dir(rtl) { margin-left: 0.250000001rem; }
+
+placeholder .title-1:dir(ltr), placeholder .title-2:dir(ltr) { margin-left: 0.750000001rem; }
+
+placeholder .title-1:dir(rtl), placeholder .title-2:dir(rtl) { margin-right: 0.750000001rem; }
+
+placeholder .title-1 + .title-2 { margin-top: 0.250000001rem; }
+
+placeholder .title-2 { color: #333; font-size: 1.3em; font-weight: initial; }
+
+placeholder box { margin-top: 1.000000001rem; }
+
+placeholder box button .large-icons { -gtk-icon-size: 32px; }
+
+placeholder box button .large-icons:dir(ltr) { margin-right: 0.500000001rem; }
+
+placeholder box button .large-icons:dir(rtl) { margin-left: 0.500000001rem; }
+
+placeholder box button label.title-3 { font-weight: initial; }
+
+placeholder box button + button { margin-top: 1.000000001rem; }
+
+list placeholder .title-1 { font-size: 2em; }
+
+list placeholder .title-2 { font-size: 1em; }
+
+popover placeholder > grid > .large-icons { -gtk-icon-size: 32px; }
+
+popover placeholder > grid > .large-icons:dir(ltr) { margin-right: 0; }
+
+popover placeholder > grid > .large-icons:dir(rtl) { margin-left: 0; }
+
+popover placeholder .title-1 { font-size: 1em; font-weight: initial; }
+
+popover placeholder .title-2 { font-size: 0.85em; }
+
+toast .osd > label, toast video controls.osd > box > button.flat.image-button > label, toast video windowcontrols controls.osd > box > button.flat > label, windowcontrols toast video controls.osd > box > button.flat > label, video toast controls.osd > box > button.flat.image-button > label, video toast windowcontrols controls.osd > box > button.flat > label, windowcontrols video toast controls.osd > box > button.flat > label, toast tooltip > label, toast scale.horizontal value.bottom > label, scale.horizontal toast value.bottom > label, toast scale.horizontal value.top > label, scale.horizontal toast value.top > label { margin: 0 1.000000001rem; text-shadow: 0 1px 2px alpha(@theme_fg_color, 0.6); }
+
+toolbox > scrolledwindow > undershoot.top, toolbox > stacksidebar > scrolledwindow > undershoot.top { background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.05) 1px, rgba(0, 0, 0, 0) 0.250000001rem); }
+
+toolbox > scrolledwindow > undershoot.bottom, toolbox > stacksidebar > scrolledwindow > undershoot.bottom { background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.05) 1px, rgba(0, 0, 0, 0) 0.250000001rem); }
+
+toolbox .top headerbar, toolbox .top headerbar:backdrop, toolbox .bottom actionbar, toolbox .bottom actionbar:backdrop { background: inherit; box-shadow: none; border-radius: 0; }
+
+.toolbar { border-spacing: 0.5rem; padding: 0.5rem; }
+
+arrow { -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); min-height: 1.3333333343rem; min-width: 1.3333333343rem; }
+
+arrow.down { -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
+
+arrow.left { -gtk-icon-source: -gtk-icontheme("pan-start-symbolic"); }
+
+arrow.right { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
+
+arrow.up { -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
+
+button.image-button, windowcontrols button { padding: 0.3333333343rem; min-height: 16px; min-width: 16px; transition: background 300ms cubic-bezier(0.4, 0, 0.2, 1), transform 300ms cubic-bezier(0.66, 3, 0.64, 1); }
+
+button.image-button:active, windowcontrols button:active { background: rgba(51, 51, 51, 0.15); transform: scale(0.8); transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+button.image-button.toggle, windowcontrols button.toggle { border-radius: 0.250000001rem; }
+
+button.text-button { padding: 0.1666666677rem 0.3333333343rem; }
+
+button > box.horizontal { border-spacing: 0.25rem; }
+
+checkbutton { border-spacing: 0.5rem; }
+
+checkbutton check, checkbutton radio { box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 1px 1px rgba(0, 0, 0, 0.05); border-style: solid; border-color: rgba(0, 0, 0, 0.2); border-width: 1px; background-clip: border-box; background-color: #fafafa; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1); -gtk-icon-size: 1.3333333343rem; min-height: 1rem; min-width: 1rem; }
+
+checkbutton check:backdrop, checkbutton radio:backdrop { background-image: none; }
+
+checkbutton check:disabled, checkbutton radio:disabled { background-color: #f1f1f1; background-image: none; }
+
+checkbutton check:hover, checkbutton radio:hover { filter: brightness(105%); }
+
+checkbutton check:active, checkbutton radio:active { background: #f1f1f1; box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 0 1px 1px rgba(0, 0, 0, 0.05), inset 0 0 1px 1px rgba(0, 0, 0, 0.05); filter: brightness(95%); }
+
+checkbutton check:active:disabled, checkbutton radio:active:disabled { box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 0 1px 1px rgba(0, 0, 0, 0.05); }
+
+checkbutton check:checked, checkbutton radio:checked { -gtk-icon-source: -gtk-icontheme("check-checked-symbolic"); color: #fafafa; background-color: @accent_color; }
+
+checkbutton check:checked:backdrop, checkbutton check:checked:disabled, checkbutton radio:checked:backdrop, checkbutton radio:checked:disabled { filter: grayscale(100%); }
+
+checkbutton check:indeterminate, checkbutton radio:indeterminate { -gtk-icon-source: -gtk-icontheme("check-indeterminate-symbolic"); }
+
+checkbutton check:disabled, checkbutton radio:disabled { opacity: 0.5; }
+
+checkbutton check { border-radius: 0.250000001rem; }
+
+checkbutton radio { border-radius: 50%; }
+
+entry { border-radius: 0.250000001rem; background-color: white; border: 1px solid rgba(0, 0, 0, 0.2); border-spacing: 0.5rem; padding: 0.5rem; }
+
+expander { min-height: 1.3333333343rem; min-width: 1.3333333343rem; transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1); -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
+
+expander:dir(rtl) { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl"); }
+
+expander:checked { -gtk-icon-transform: rotate(90deg); }
+
+expander:checked:dir(rtl) { -gtk-icon-transform: rotate(-90deg); }
+
+gridview { border-spacing: 1rem; padding: 1rem; }
+
+gridview.view { background-color: white; }
+
+gridview rubberband { border-radius: 0.250000001rem; }
+
+headerbar .title { font-weight: bold; }
+
+headerbar .subtitle { opacity: 0.75; font-size: 80%; }
+
+headerbar box.start, headerbar box.end { border-spacing: 0.5rem; }
+
+headerbar box.start:dir(ltr), headerbar box.end:dir(rtl) { margin-right: 1.000000001rem; }
+
+headerbar box.end:dir(ltr), headerbar box.start:dir(rtl) { margin-left: 1.000000001rem; }
+
+headerbar .large-icons { -gtk-icon-size: 24px; }
+
+.csd headerbar { padding: 0.500000001rem; }
+
+image { color: inherit; -gtk-icon-palette: error #c6262e, success #3a9104, warning #e7a92b; }
+
+image:disabled { filter: opacity(0.5); }
+
+image:backdrop { -gtk-icon-palette: default; }
+
+.normal-icons { -gtk-icon-size: 16px; }
+
+.large-icons { -gtk-icon-size: 32px; }
+
+list.card, list.boxed-list { border-radius: 0.375000001rem; }
+
+list.card > row:first-child, list.boxed-list > row:first-child, list.card > row:first-child.expander row.header, list.boxed-list > row:first-child.expander row.header { border-top-left-radius: 0.375000001rem; border-top-right-radius: 0.375000001rem; }
+
+list.card > row:last-child, list.boxed-list > row:last-child, list.card > row:last-child.expander:not(:checked), list.card > row:last-child.expander:not(:checked) row.header, list.boxed-list > row:last-child.expander:not(:checked) row.header, list.card > row:last-child.expander:checked list.nested, list.boxed-list > row:last-child.expander:checked list.nested, list.card > row:last-child.expander:checked list.nested > row:last-child, list.boxed-list > row:last-child.expander:checked list.nested > row:last-child { border-bottom-left-radius: 0.375000001rem; border-bottom-right-radius: 0.375000001rem; border-bottom-width: 0; }
+
+list.separators > row + row { border-top: 1px solid rgba(0, 0, 0, 0.2); box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.07); }
+
+list.rich-list > row { padding: 0.500000001rem; min-height: 2.6666666677rem; }
+
+listview.separators > row + row { border-top: 1px solid rgba(0, 0, 0, 0.2); box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.07); }
+
+listview.view { background-color: white; }
+
+paned.horizontal > separator { border-right: solid 1px white; margin-right: -1px; }
+
+paned.vertical > separator { border-bottom: solid 1px white; margin-bottom: -1px; }
+
+popover > arrow, popover > contents { background-color: white; color: #333; }
+
+popover > arrow { border: 1px solid rgba(0, 0, 0, 0.2); }
+
+popover > contents { box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15), 0 3px 3px -3px rgba(0, 0, 0, 0.35); border-radius: 0.750000001rem; }
+
+popover > contents undershoot.top { background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.05) 1px, rgba(0, 0, 0, 0) 0.250000001rem); }
+
+popover > contents undershoot.bottom { background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.05) 1px, rgba(0, 0, 0, 0) 0.250000001rem); }
+
+popover.menu > contents { box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15), 0 3px 3px -3px rgba(0, 0, 0, 0.35); padding: 0.5rem; }
+
+popover.emoji-picker .emoji-searchbar { margin: 0.5rem; }
+
+popover.emoji-picker scrolledwindow.view box.vertical > label { margin: 0 0.5rem; }
+
+popover.emoji-picker emoji { min-height: 2.6666666677rem; min-width: 2.6666666677rem; font-size: 1.3333333343rem; }
+
+popover.emoji-picker .emoji-toolbar { margin: 0.5rem; }
+
+popover.emoji-picker .emoji-toolbar button.emoji-section.image-button, popover.emoji-picker .emoji-toolbar windowcontrols button.emoji-section, windowcontrols popover.emoji-picker .emoji-toolbar button.emoji-section { min-height: 2.000000001rem; min-width: 2.000000001rem; opacity: 0.6; }
+
+popover.emoji-picker .emoji-toolbar button.emoji-section.image-button:checked, popover.emoji-picker .emoji-toolbar windowcontrols button.emoji-section:checked, windowcontrols popover.emoji-picker .emoji-toolbar button.emoji-section:checked { opacity: 1; }
+
+.model, stacksidebar.sidebar .navigation-sidebar row, .menuitem, modelbutton, gridview child.activatable { border-radius: 0.375000001rem; padding: 0.5rem; transition: background 300ms cubic-bezier(0.4, 0, 0.2, 1), transform 300ms cubic-bezier(0.66, 3, 0.64, 1); }
+
+.model.circular, stacksidebar.sidebar .navigation-sidebar row.circular, .circular.menuitem, modelbutton.circular { background: rgba(51, 51, 51, 0.05); padding: 0.750000001rem; }
+
+.model:hover, stacksidebar.sidebar .navigation-sidebar row:hover, .menuitem:hover, modelbutton:hover, gridview child.activatable:hover, .model:focus-visible, stacksidebar.sidebar .navigation-sidebar row:focus-visible, .menuitem:focus-visible, modelbutton:focus-visible, gridview child.activatable:focus-visible { background: rgba(51, 51, 51, 0.1); }
+
+.model:active, stacksidebar.sidebar .navigation-sidebar row:active, .menuitem:active, modelbutton:active, gridview child.activatable:active { background: rgba(51, 51, 51, 0.15); transform: scale(0.95); transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+.menuitem, modelbutton { border-spacing: 0.5rem; min-width: 12.500000001rem; }
+
+.menuitem:active, modelbutton:active { transform: scale(0.98, 0.96); }
+
+.menu .circular-buttons, .menu .inline-buttons { border-spacing: 0.5rem; padding: 0.5rem; }
+
+.menu .circular-buttons > box, .menu .inline-buttons > box { border-spacing: 0.5rem; }
+
+.menu .title.separator { padding: 0.5rem; }
+
+progressbar progress { background-color: @accent_color; border-radius: 0.250000001rem; }
+
+progressbar progress:backdrop { filter: grayscale(100%); }
+
+progressbar trough { background-color: rgba(0, 0, 0, 0.1); border-radius: 99px; border-radius: 0.250000001rem; min-height: 0.750000001rem; min-width: 0.750000001rem; }
+
+progressbar trough:disabled { background-color: rgba(0, 0, 0, 0.09); }
+
+progressbar.horizontal progress { min-height: 0.750000001rem; }
+
+progressbar.horizontal progress:not(.pulse) { animation: progress 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 60%, rgba(255, 255, 255, 0)); background-repeat: no-repeat; background-size: 48px 100%; }
+
+progressbar.horizontal progress:not(.pulse).right { animation-direction: reverse; }
+
+progressbar.horizontal progress:not(.pulse):backdrop { animation: none; background-image: none; }
+
+progressbar.vertical progress { min-width: 0.750000001rem; }
+
+@keyframes progress { from { background-position: calc(0% - 48px), 0%; }
+  to { background-position: calc(100% + 48px), 0%; } }
+
+scale highlight { background-color: @accent_color; }
+
+scale highlight:backdrop { background-color: rgba(51, 51, 51, 0.5); }
+
+scale slider { min-height: calc(1.3333333343rem - 1px); min-width: calc(1.3333333343rem - 1px); transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), opacity 300ms cubic-bezier(0.4, 0, 0.2, 1), transform 300ms cubic-bezier(0.66, 3, 0.64, 1); }
+
+scale trough { background-color: rgba(0, 0, 0, 0.1); border-radius: 99px; min-height: 0.5rem; min-width: 0.5rem; }
+
+scale trough:disabled { background-color: rgba(0, 0, 0, 0.09); }
+
+scale.dragging slider { transform: scale(1.1); transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1); box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.2), 0 3px 8px 2px rgba(0, 0, 0, 0.1), 0 5px 5px -3px rgba(0, 0, 0, 0.4), 0 8px 5px 1px rgba(0, 0, 0, 0.1); }
+
+scale.horizontal fill.top { border-radius: 1.000000001rem 0 0 1.000000001rem; }
+
+scale.horizontal fill.bottom { border-radius: 0 1.000000001rem 1.000000001rem 0; }
+
+scale.horizontal slider { margin: -0.4166666672rem -1px; }
+
+scale.horizontal value.bottom, scale.horizontal value.top { opacity: 0; transform: scale(0.9); transition: opacity 100ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+scale.horizontal value.bottom { margin-bottom: -2.350000003rem; margin-top: 0.250000001rem; }
+
+scale.horizontal value.top { margin-bottom: 0.250000001rem; margin-top: -2.350000003rem; }
+
+scale.horizontal.dragging value.bottom, scale.horizontal.dragging value.top { opacity: 1; transform: scale(1); transition: transform 300ms cubic-bezier(0.66, 3, 0.64, 1); }
+
+scale.vertical slider { margin: -1px -0.4166666672rem; }
+
+scrolledwindow.frame { border: 1px solid rgba(0, 0, 0, 0.2); }
+
+scrollbar slider { background-color: rgba(51, 51, 51, 0.7); box-shadow: 0 0 0 1px rgba(250, 250, 250, 0.25); border-radius: 99px; transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1), min-width 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+scrollbar trough { background-color: rgba(51, 51, 51, 0.2); border-radius: 99px; margin: 0.250000001rem; }
+
+scrollbar:hover slider, scrollbar.hovering slider { background-color: rgba(51, 51, 51, 0.7); transition: background 300ms cubic-bezier(0.4, 0, 0.2, 1), min-width 300ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+scrollbar:active slider { background-color: #333; transition: background 300ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+scrollbar.horizontal slider { min-width: 1.6666666677rem; min-height: 0.750000001rem; }
+
+scrollbar.vertical slider { min-height: 1.6666666677rem; min-width: 0.750000001rem; }
+
+scrollbar.overlay-indicator trough { background-color: transparent; transition: background 300ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+scrollbar.overlay-indicator:hover trough, scrollbar.overlay-indicator.hovering trough { background-color: rgba(51, 51, 51, 0.2); transition: background 300ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+scrollbar.overlay-indicator.horizontal slider { min-height: 0.250000001rem; }
+
+scrollbar.overlay-indicator.horizontal:hover slider, scrollbar.overlay-indicator.horizontal.hovering slider { min-height: 0.750000001rem; }
+
+scrollbar.overlay-indicator.vertical slider { min-width: 0.250000001rem; }
+
+scrollbar.overlay-indicator.vertical:hover slider, scrollbar.overlay-indicator.vertical.hovering slider { min-width: 0.750000001rem; }
+
+selection, stacksidebar.sidebar .navigation-sidebar row:selected, button.image-button.toggle:checked, windowcontrols button.toggle:checked, gridview child.activatable:selected, gridview rubberband { background-color: @selected_bg_color; color: @selected_fg_color; }
+
+selection:backdrop, stacksidebar.sidebar .navigation-sidebar row:backdrop:selected, button.image-button.toggle:backdrop:checked, windowcontrols button.toggle:backdrop:checked, gridview child.activatable:backdrop:selected, gridview rubberband:backdrop { background-color: rgba(51, 51, 51, 0.1); color: inherit; }
+
+separator { background-color: rgba(0, 0, 0, 0.15); min-height: 1px; min-width: 1px; }
+
+shortcuts-section { margin: 1.000000001rem; }
+
+accelerator, .keycap { background: rgba(51, 51, 51, 0.1); border-radius: 0.250000001rem; box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1); color: rgba(51, 51, 51, 0.9); font-size: 85%; min-width: 1.000000001rem; padding: 0.250000001rem 0.500000001rem; }
+
+shortcut .dim-label, shortcut placeholder .title-2, placeholder shortcut .title-2, shortcut placeholder box button label:not(.title-3), placeholder box button shortcut label:not(.title-3), shortcut entry placeholder, entry shortcut placeholder { font-size: 0; min-width: 0.500000001rem; opacity: 0; }
+
+.sidebar { background-color: #f1f1f1; box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07); }
+
+stacksidebar.sidebar { background: none; box-shadow: none; }
+
+stacksidebar.sidebar .navigation-sidebar { margin: 0.5rem; }
+
+stacksidebar.sidebar .navigation-sidebar row { border-spacing: 0.5rem; min-width: 12.500000001rem; }
+
+stacksidebar.sidebar .navigation-sidebar row:active { transform: scale(0.98, 0.96); }
+
+slider { box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 1px 1px rgba(0, 0, 0, 0.05); border-style: solid; border-color: rgba(0, 0, 0, 0.2); border-width: 1px; background-clip: border-box; background-color: #fafafa; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1); border: none; border-radius: 999px; box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15), 0 3px 3px -3px rgba(0, 0, 0, 0.35); }
+
+slider:backdrop { background-image: none; }
+
+slider:disabled { background-color: #f1f1f1; background-image: none; }
+
+slider:backdrop { box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+slider:disabled { box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+spinner { -gtk-icon-source: -gtk-icontheme("process-working-symbolic"); opacity: 0; transform: scale(0.8); transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+spinner:checked { animation: spin 600ms steps(12) infinite; opacity: 1; transform: scale(1); transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1), transform 300ms cubic-bezier(0.66, 3, 0.64, 1); }
+
+spinner:checked:backdrop { opacity: 0.8; }
+
+spinner:checked:disabled { opacity: 0.4; }
+
+switch { background-color: rgba(0, 0, 0, 0.1); border-radius: 99px; }
+
+switch:disabled { background-color: rgba(0, 0, 0, 0.09); }
+
+switch:checked:not(:backdrop):not(.mode-switch) { background-color: @accent_color; }
+
+tooltip { margin: 0.250000001rem; text-shadow: 0 0.0833333343rem 0.1666666677rem rgba(51, 51, 51, 0.6); }
+
+video, video.card { background: black; }
+
+video image.circular.large-icons.osd, video controls.osd > box > button.large-icons.flat.image-button, video windowcontrols controls.osd > box > button.flat, windowcontrols video controls.osd > box > button.flat { background: rgba(212, 212, 212, 0.65); -gtk-icon-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0.3rem 1rem rgba(0, 0, 0, 0.3); color: white; padding: 1rem; }
+
+video controls.osd { background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1) 1.5rem); color: white; margin: 0; padding: 1em; }
+
+video controls.osd > box { border-spacing: 0.5rem; }
+
+video controls.osd > box > button.flat.image-button, video windowcontrols controls.osd > box > button.flat, windowcontrols video controls.osd > box > button.flat { border-radius: 999px; }
+
+video controls.osd > box > scalebutton > button.toggle { -gtk-icon-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 1em rgba(0, 0, 0, 0.25); }
+
+video controls.osd > box > scalebutton > button.toggle:checked { background: alpha(shade(@accent_color, 0.85), 0.5); color: mix(shade(@accent_color, 1.1), white, 0.75); }
+
+video controls.osd > box box.horizontal { border-spacing: 0.5rem; }
+
+video controls.osd > box box.horizontal > label { font-weight: bold; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 1rem rgba(0, 0, 0, 0.25); }
+
+video controls.osd > box box.horizontal > scale.horizontal fill { animation: progress 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; background-color: rgba(255, 255, 255, 0.15); background-repeat: no-repeat; background-size: 48px 100%; background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 60%, rgba(255, 255, 255, 0)); }
+
+video controls.osd > box box.horizontal > scale.horizontal fill:backdrop { animation: none; background-image: none; }
+
+video controls.osd > box box.horizontal > scale.horizontal highlight { background-color: white; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+
+video controls.osd > box box.horizontal > scale.horizontal trough { background-color: rgba(255, 255, 255, 0.25); box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075), 0 0.2rem 1rem -0.15rem rgba(0, 0, 0, 0.1); }
+
+video controls.osd > box box.horizontal > scale.horizontal slider { min-width: 0.250000001rem; opacity: 0; }
+
+video controls.osd > box box.horizontal > scale.horizontal:hover slider { opacity: 1; }
+
+@keyframes progress { from { background-position: calc(0% - 48px), 0%; }
+  to { background-position: calc(100% + 48px), 0%; } }
+
+windowcontrols.end:dir(ltr), windowcontrols.start:dir(rtl) { margin-left: 1.000000001rem; }
+
+windowcontrols.start:dir(ltr), windowcontrols.end:dir(rtl) { margin-right: 1.000000001rem; }
+
+windowcontrols button { border-radius: 0.375000001rem; padding: 0.3333333343rem; }
+
+window { background-color: #fafafa; color: #333; }
+
+window.csd { border-radius: 0.750000001rem; box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.2), 0 2px 4px 2px rgba(0, 0, 0, 0.1), 0 15px 12px -10px rgba(0, 0, 0, 0.4), 0 8px 14px 4px rgba(0, 0, 0, 0.15); }
+
+window.csd:backdrop { box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 1px 0 0 0 rgba(255, 255, 255, 0.07), inset -1px 0 0 0 rgba(255, 255, 255, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15), 0 3px 3px -3px rgba(0, 0, 0, 0.35); }
+
+window.csd.maximized { box-shadow: 0 0 0 0.375000001rem black; }
+
+window.csd.tiled-right:not(.maximized), window.csd.tiled-left:not(.maximized) { box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15), 0 3px 3px -3px rgba(0, 0, 0, 0.35); }
+
+window.csd.tiled-right:not(.maximized).tiled-top { border-top-left-radius: 0; }
+
+window.csd.tiled-right:not(.maximized).tiled-bottom { border-bottom-left-radius: 0; }
+
+window.csd.tiled-left:not(.maximized).tiled-top { border-top-right-radius: 0; }
+
+window.csd.tiled-left:not(.maximized).tiled-bottom { border-bottom-right-radius: 0; }
+
+window.csd.fullscreen { border-radius: 0; }
+
+window.ssd { border-radius: 9px 9px 0 0; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); }

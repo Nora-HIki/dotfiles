@@ -1,0 +1,48 @@
+// ### Tsarurin Miyagami  - Top ### //
+
+{
+"include": [
+  "$HOME/.config/waybar/Modules",
+  "$HOME/.config/waybar/ModulesWorkspaces",
+  "$HOME/.config/waybar/ModulesCustom",
+  "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
+  ],
+"layer": "top",
+//"mode": "dock",
+"exclusive": true,
+"passthrough": false,
+"position": "top",
+"spacing": 3,
+"fixed-center": true,
+"ipc": true,
+"margin-top": 3,
+"margin-left": 8,
+"margin-right": 8,
+
+"modules-left": [
+	"custom/cava_mviz",
+	"hyprland/workspaces#rw",
+	"hyprland/window",
+	],
+
+"modules-center": [
+	"custom/playerctl",
+	"clock#3",
+	"custom/weather",
+	"idle_inhibitor",	
+	],
+
+"modules-right": [
+	"tray",
+	"group/notify",
+	"network#speed",
+	"battery",
+	"temperature",
+	"cpu",
+	"power-profiles-daemon",
+	"memory",
+	"disk",
+	"pulseaudio",
+	"pulseaudio#microphone",
+	],}
