@@ -5,7 +5,7 @@ read -p "enter catbox hash" CATBOX_HASH
 USER_HASH="$CATBOX_HASH"
 PICTURES_DIR="$HOME/Pictures"
 # List the folders inside ~/Pictures you want to archive
-FOLDERS=("wallpapers" "sddm_backgrounds" "grub_backgrounds" "pfps")
+FOLDERS=("wallpapers" "sddm_backrgounds" "grub_backgrounds" "pfps")
 
 # Colors
 GREEN='\033[0;32m'

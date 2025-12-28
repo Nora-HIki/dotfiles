@@ -37,6 +37,7 @@ default_target_type = "template"
 "files/ranger" = "~/.config/ranger"
 "files/Thunar" = "~/.config/Thunar"
 "files/wallust" = "~/.config/wallust"
+"files/textfox" = "~/textfox"
 
 [gui_libs.files]
 "files/gtk-3.0" = "~/.config/gtk-3.0"
@@ -70,5 +71,28 @@ default_target_type = "template"
 "files/services" = "/etc/systemd/system"
 "files/systemd" = "~/.config/systemd"
 
-[default]
-depends = []
+#########################################
+# PROFILES (Compositions of base packages)
+#########################################
+# Full desktop profile: Everything for a themed Hyprland setup
+[full-desktop]
+depends = ["terminal", "themes", "desktop", "apps", "gui_libs", "system_user", "Pictures"]
+
+# Root-only profile: For system-wide changes (requires sudo deploy)
+[root-system]
+depends = ["grub", "sddm", "plymouth", "systemd"]
+
+# Minimal profile: Just essentials (terminal + basic files, no GUI bloat)
+#[minimal]
+#depends = ["terminal", "Pictures"]
+
+# Laptop profile: Desktop + power tweaks (e.g., exclude heavy services)
+#[laptop]
+#depends = ["terminal", "themes", "desktop", "apps", "gui_libs", "system_user", "Pictures"]
+
+# Server/Headless profile: No GUI, just system + terminal
+#[server]
+#depends = ["terminal", "system_user", "grub", "sddm", "plymouth", "systemd"]
+# Exclude GUI-heavy stuff via negation isn't direct, but depends skips them
+
+

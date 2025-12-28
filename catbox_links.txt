@@ -1,0 +1,4 @@
+wallpapers: https://files.catbox.moe/ntadyb.gz
+grub_backgrounds: https://files.catbox.moe/fcpbfh.gz
+pfps: https://files.catbox.moe/ke6jxf.gz
+sddm_backrgounds: https://files.catbox.moe/m0dhno.gz
