@@ -67,7 +67,7 @@ if [ -d "/usr/share/sddm/themes/silent" ]; then
 else
     echo -e "${YELLOW}⚠️ SDDM theme dir not found.${NC}"
 fi
-
+sudo cp -r $USER_HOME/dotfiles/files/sddm/silent /usr/share/sddm/themes/
 # GRUB Patches (safer sed with backup)
 GRUB_HEADER="/etc/grub.d/00_header"
 GRUB_DEFAULT="/etc/default/grub"

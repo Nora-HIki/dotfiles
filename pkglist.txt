@@ -14,6 +14,8 @@ wlogout
 swww
 wallust
 yad
+bc 
+jq
 plymouth
 network-manager-applet
 nwg-look

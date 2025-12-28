@@ -53,7 +53,6 @@ default_target_type="template"
 
 [sddm.files]
 "files/sddm/sddm.conf" = "/etc/sddm.conf"
-"files/sddm/silent" = { target = "/usr/share/sddm/themes/silent", type = "symbolic" }
 "files/sddm/wallpaper_update.sh" = "/usr/share/sddm/scripts/wallpaper_update.sh"
 
 [plymouth.files]
