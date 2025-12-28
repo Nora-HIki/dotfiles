@@ -1,0 +1,5 @@
+packages = ["grub", "sddm", "plymouth", "systemd"]
+
+[variables]
+username = "lol"
+email = "brook.self667@slmail.me"

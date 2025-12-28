@@ -83,4 +83,3 @@ zathura
 zathura-pdf-mupdf
 yt-dlp
 timeshift
-timeshift-autosnap

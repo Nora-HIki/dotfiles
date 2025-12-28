@@ -1,14 +1,8 @@
-[settings]
-default_target_type = "template"
-
-[helpers]
+# global.toml
 
 #########################################
-# USER CONFIGS
+# FILE MAPPINGS
 #########################################
-[Pictures.files]
-"files/Pictures" = "~/Pictures"
-
 [terminal.files]
 "files/kitty" = "~/.config/kitty"
 "files/gitconfig" = "~/.gitconfig"
@@ -52,9 +46,7 @@ default_target_type = "template"
 "files/mimeapps.list" = "~/.config/mimeapps.list"
 "files/user-dirs.dirs" = "~/.config/user-dirs.dirs"
 
-#########################################
-# ROOT CONFIGS (Simple Paths)
-#########################################
+# Root packages
 [grub.files]
 "files/grub/themes" = "/boot/grub/themes"
 
@@ -70,29 +62,4 @@ default_target_type = "template"
 [systemd.files]
 "files/services" = "/etc/systemd/system"
 "files/systemd" = "~/.config/systemd"
-
-#########################################
-# PROFILES (Compositions of base packages)
-#########################################
-# Full desktop profile: Everything for a themed Hyprland setup
-[full-desktop]
-depends = ["terminal", "themes", "desktop", "apps", "gui_libs", "system_user", "Pictures"]
-
-# Root-only profile: For system-wide changes (requires sudo deploy)
-[root-system]
-depends = ["grub", "sddm", "plymouth", "systemd"]
-
-# Minimal profile: Just essentials (terminal + basic files, no GUI bloat)
-#[minimal]
-#depends = ["terminal", "Pictures"]
-
-# Laptop profile: Desktop + power tweaks (e.g., exclude heavy services)
-#[laptop]
-#depends = ["terminal", "themes", "desktop", "apps", "gui_libs", "system_user", "Pictures"]
-
-# Server/Headless profile: No GUI, just system + terminal
-#[server]
-#depends = ["terminal", "system_user", "grub", "sddm", "plymouth", "systemd"]
-# Exclude GUI-heavy stuff via negation isn't direct, but depends skips them
-
 
