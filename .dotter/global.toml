@@ -1,5 +1,6 @@
 # global.toml
-
+[settings]
+default_target_type="template"
 #########################################
 # FILE MAPPINGS
 #########################################
@@ -11,18 +12,18 @@
 "files/oh-my-zsh/custom" = "~/.oh-my-zsh/custom"
 
 [themes.files]
-"files/themes" = "~/.themes"
-"files/icons" = "~/.icons"
+"files/themes" = { target = "~/.themes", type = "symbolic" }
+"files/icons" = { target = "~/.icons", type = "symbolic" }
 
 [desktop.files]
 "files/btop" = "~/.config/btop"
 "files/cava" = "~/.config/cava"
-"files/fastfetch" = "~/.config/fastfetch"
-"files/hypr" = "~/.config/hypr"
-"files/waybar" = "~/.config/waybar"
-"files/rofi" = "~/.config/rofi"
-"files/swaync" = "~/.config/swaync"
-"files/wlogout" = "~/.config/wlogout"
+"files/fastfetch" = { target = "~/.config/fastfetch", type = "symbolic" }
+"files/hypr" = { target = "~/.config/hypr", type = "symbolic" }
+"files/waybar" = { target = "~/.config/waybar", type = "symbolic" }
+"files/rofi" = { target = "~/.config/rofi", type = "symbolic" }
+"files/swaync" = { target = "~/.config/swaync", type = "symbolic" }
+"files/wlogout" = { target = "~/.config/wlogout", type = "symbolic" }
 "files/swappy" = "~/.config/swappy"
 
 [apps.files]
@@ -31,7 +32,7 @@
 "files/ranger" = "~/.config/ranger"
 "files/Thunar" = "~/.config/Thunar"
 "files/wallust" = "~/.config/wallust"
-"files/textfox" = "~/textfox"
+"files/textfox" = { target = "~/textfox", type = "symbolic" }
 
 [gui_libs.files]
 "files/gtk-3.0" = "~/.config/gtk-3.0"
@@ -48,16 +49,17 @@
 
 # Root packages
 [grub.files]
-"files/grub/themes" = "/boot/grub/themes"
+"files/grub/themes" = { target = "/boot/grub/themes", type = "symbolic" }
 
 [sddm.files]
 "files/sddm/sddm.conf" = "/etc/sddm.conf"
-"files/sddm/silent" = "/usr/share/sddm/themes/silent"
+"files/sddm/silent" = { target = "/usr/share/sddm/themes/silent", type = "symbolic" }
 "files/sddm/wallpaper_update.sh" = "/usr/share/sddm/scripts/wallpaper_update.sh"
 
 [plymouth.files]
 "files/plymouth/plymouthd.conf" = "/etc/plymouth/plymouthd.conf"
-"files/plymouth/onePiece-plymouth" = "/usr/share/plymouth/themes/onePiece-plymouth"
+"files/plymouth/onePiece-plymouth" = { target = "/usr/share/plymouth/themes/onePiece-plymouth", type = "symbolic" }
+
 
 [systemd.files]
 "files/services" = "/etc/systemd/system"

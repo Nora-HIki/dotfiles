@@ -150,15 +150,23 @@ echo "Waiting for path input (Firefox should be open)..."
 read -p "Paste the Root Directory path here (or Enter to skip Textfox): " MANUAL_PATH
 kill $FF_PID 2>/dev/null || true  # Clean up Firefox if still running
 
-TEXTFOX_INSTALLER="$USER_HOME/textfox/tf-install.sh"
+TEXTFOX_DIR="$USER_HOME/textfox"
+TEXTFOX_INSTALLER="$TEXTFOX_DIR/tf-install.sh"
+
 if [ -f "$TEXTFOX_INSTALLER" ]; then
     echo -e "${CYAN}🔧 Running Textfox installer...${NC}"
     chmod +x "$TEXTFOX_INSTALLER"
-    if sudo -u "$USER_NAME" bash "$TEXTFOX_INSTALLER" "$MANUAL_PATH"; then
-        echo -e "${GREEN}✅ Textfox installed.${NC}"
-    else
-        echo -e "${YELLOW}⚠️ Textfox install completed with issues.${NC}"
-    fi
+    
+    # Change directory to where the files actually are before running
+    # We use ( ) to run in a subshell so we don't change the path for the rest of your script
+    (
+        cd "$TEXTFOX_DIR" || exit
+        if sudo -u "$USER_NAME" bash "./tf-install.sh" "$MANUAL_PATH"; then
+            echo -e "${GREEN}✅ Textfox installed.${NC}"
+        else
+            echo -e "${YELLOW}⚠️ Textfox install completed with issues.${NC}"
+        fi
+    )
 else
     echo -e "${YELLOW}⚠️ Textfox installer not found at $TEXTFOX_INSTALLER.${NC}"
 fi

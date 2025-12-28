@@ -240,6 +240,7 @@
 ; gradient_color_7 = '#cc5933'
 ; gradient_color_8 = '#cc3333'
 
+{{{{raw}}}}
 # for wallust
 gradient = 1
 gradient_count = 8
@@ -251,7 +252,7 @@ gradient_color_5 = '{{color7}}'
 gradient_color_6 = '{{color12}}'
 gradient_color_7 = '{{color13}}'
 gradient_color_8 = '{{color15}}'
-
+{{{{/raw}}}}
 
 [smoothing]
 

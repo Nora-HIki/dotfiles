@@ -130,25 +130,29 @@ echo -e "${YELLOW}📂 Backup saved to $BACKUP_DIR${NC}"
 echo -e "${CYAN}🚀 Deploying with Dotter (dry-run first)...${NC}"
 if [ -f "./dotter" ]; then
     # Dry-run user
-    if ! ./dotter --local-config .dotter/local.toml --dry-run deploy; then
+    if ! ./dotter --local-config .dotter/local.toml --dry-run deploy --force; then
         echo -e "${YELLOW}⚠️ Dry-run had warnings, but proceeding.${NC}"
     fi
+    sudo rm -rf .dotter/cache.toml .dotter/cache
     # Deploy user
     if ./dotter --local-config .dotter/local.toml deploy --force; then
         echo -e "${GREEN}✅ User deployment complete.${NC}"
     else
         echo -e "${RED}❌ User deployment failed.${NC}"; exit 1;
     fi
+    sudo rm -rf .dotter/cache.toml .dotter/cache
     # Dry-run root
-    if ! sudo ./dotter --sudo --local-config .dotter/local-root.toml --dry-run deploy; then
+    if ! sudo ./dotter --local-config .dotter/local-root.toml --dry-run deploy --force; then
         echo -e "${YELLOW}⚠️ Root dry-run had warnings.${NC}"
     fi
+    sudo rm -rf .dotter/cache.toml .dotter/cache
     # Deploy root
-    if sudo ./dotter --sudo --local-config .dotter/local-root.toml deploy --force; then
+    if sudo ./dotter --local-config .dotter/local-root.toml deploy --force; then
         echo -e "${GREEN}✅ Root deployment complete.${NC}"
     else
         echo -e "${RED}❌ Root deployment failed.${NC}"
     fi
+    sudo rm -rf .dotter/cache.toml .dotter/cache
 else
     echo -e "${RED}❌ dotter binary not found! Download from GitHub releases.${NC}"; exit 1;
 fi

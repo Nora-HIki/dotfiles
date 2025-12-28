@@ -1,3 +1,4 @@
+{{{{raw}}}}
 {
     "windowBackground": "#0f0f15",
     "primaryText": "#bac2de",
@@ -15,3 +16,4 @@
     "selectionText": "#F2DCF3",
     "borderSecondary": "#{{color5}}"
 }
+{{{{/raw}}}}
